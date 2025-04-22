@@ -1,0 +1,54 @@
+@font-face {
+    font-family: "FunnelSans-Bold";
+    src: url(/ASSETS/FONTS/FunnelSans-Bold.ttf);
+}
+
+@font-face {
+    font-family: "FunnelSans-BoldItalic";
+    src: url(/ASSETS/FONTS/FunnelSans-BoldItalic.ttf);
+}
+
+@font-face {
+    font-family: "FunnelSans-ExtraBold";
+    src: url(/ASSETS/FONTS/FunnelSans-ExtraBold.ttf);
+}
+
+@font-face {
+    font-family: "FunnelSans-ExtraBoldItalic";
+    src: url(/ASSETS/FONTS/FunnelSans-ExtraBoldItalic.ttf);
+}
+
+@font-face {
+    font-family: "FunnelSans-Italic";
+    src: url(/ASSETS/FONTS/FunnelSans-Italic.ttf);
+}
+
+@font-face {
+    font-family: "FunnelSans-LightItalic";
+    src: url(/ASSETS/FONTS/FunnelSans-LightItalic.ttf);
+}
+
+@font-face {
+    font-family: "FunnelSans-Medium";
+    src: url(/ASSETS/FONTS/FunnelSans-Medium.ttf);
+}
+
+@font-face {
+    font-family: "FunnelSans-MediumItalic";
+    src: url(/ASSETS/FONTS/FunnelSans-MediumItalic.ttf);
+}
+
+@font-face {
+    font-family: "FunnelSans-Regular";
+    src: url(/ASSETS/FONTS/FunnelSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: "FunnelSans-SemiBold";
+    src: url(/ASSETS/FONTS/FunnelSans-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: "FunnelSans-SemiBoldItalic";
+    src: url(/ASSETS/FONTS/FunnelSans-SemiBoldItalic.ttf);
+}
