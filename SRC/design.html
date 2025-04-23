@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/STYLES/Styledesign.css">
     <title>Document</title>
 </head>
 <body>
@@ -23,6 +24,40 @@
             </nav>
         </section>
     </header>
+    <!----------------------------MAIN---------------------------------->
+    <Main>
+        <h1>Crear Personaje de Fantasía</h1>
+        <form id="characterForm">
+          <label>Nombre: <input type="text" name="nombre" required></label><br><br>
+        
+          <label>Raza:
+            <select id="raceSelect" name="raza"></select>
+          </label><br><br>
+      
+          <label>Clase:
+            <select id="classSelect" name="clase"></select>
+          </label><br><br>
+      
+          <label>Género:
+            <select name="genero">
+              <option value="Masculino">Masculino</option>
+              <option value="Femenino">Femenino</option>
+              <option value="Otros">Otros</option>
+            </select>
+          </label><br><br>
+      
+          <fieldset>
+            <legend>Estadísticas</legend>
+            <label>Fuerza: <input type="number" name="fuerza" min="1" max="20"></label>
+            <label>Destreza: <input type="number" name="destreza" min="1" max="20"></label>
+            <label>Constitución: <input type="number" name="constitucion" min="1" max="20"></label>
+            <label>Inteligencia: <input type="number" name="inteligencia" min="1" max="20"></label>
+            <label>Sabiduría: <input type="number" name="sabiduria" min="1" max="20"></label>
+            <label>Carisma: <input type="number" name="carisma" min="1" max="20"></label>
+          </fieldset><br>
+          <button type="submit">Guardar Personaje</button>
+        </form>
+    </Main>
     <!----------------------------FOOTER-------------------------------->
     <footer>
         <p>© 2025 Created by Juan Jose Prada</p>
