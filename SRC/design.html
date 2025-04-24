@@ -26,37 +26,48 @@
     </header>
     <!----------------------------MAIN---------------------------------->
     <Main>
-        <h1>Crear Personaje de Fantasía</h1>
-        <form id="characterForm">
-          <label>Nombre: <input type="text" name="nombre" required></label><br><br>
-        
-          <label>Raza:
-            <select id="raceSelect" name="raza"></select>
-          </label><br><br>
-      
-          <label>Clase:
-            <select id="classSelect" name="clase"></select>
-          </label><br><br>
-      
-          <label>Género:
-            <select name="genero">
-              <option value="Masculino">Masculino</option>
-              <option value="Femenino">Femenino</option>
-              <option value="Otros">Otros</option>
-            </select>
-          </label><br><br>
-      
-          <fieldset>
-            <legend>Estadísticas</legend>
-            <label>Fuerza: <input type="number" name="fuerza" min="1" max="20"></label>
-            <label>Destreza: <input type="number" name="destreza" min="1" max="20"></label>
-            <label>Constitución: <input type="number" name="constitucion" min="1" max="20"></label>
-            <label>Inteligencia: <input type="number" name="inteligencia" min="1" max="20"></label>
-            <label>Sabiduría: <input type="number" name="sabiduria" min="1" max="20"></label>
-            <label>Carisma: <input type="number" name="carisma" min="1" max="20"></label>
-          </fieldset><br>
-          <button type="submit">Guardar Personaje</button>
-        </form>
+        <section class="Tittle">
+            <h1>Create Your Hero</h1>
+        </section>
+        <section class="ContainerForm">
+            <form id="characterForm">
+              <div class="form-columns">
+                <div class="column">
+                  <label>Name: <input type="text" name="nombre" required></label><br><br>
+          
+                  <label>Ethnicity:
+                    <select id="raceSelect" name="raza"></select>
+                  </label><br><br>
+          
+                  <label>Class:
+                    <select id="classSelect" name="clase"></select>
+                  </label><br><br>
+          
+                  <label>Genre:
+                    <select name="genre">
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </label>
+                </div>
+                <div class="column">
+                  <fieldset>
+                    <legend>Stats</legend>
+                    <label>Strong: <input type="number" name="fuerza" min="1" max="20"></label>
+                    <label>Skill: <input type="number" name="destreza" min="1" max="20"></label>
+                    <label>Physique: <input type="number" name="constitucion" min="1" max="20"></label>
+                    <label>Brightness: <input type="number" name="inteligencia" min="1" max="20"></label>
+                    <label>Wisdom: <input type="number" name="sabiduria" min="1" max="20"></label>
+                    <label>Charisma: <input type="number" name="carisma" min="1" max="20"></label>
+                  </fieldset>
+                </div>
+              </div>
+          
+              <br>
+              <button type="submit">Save Hero</button>
+            </form>
+          </section>
     </Main>
     <!----------------------------FOOTER-------------------------------->
     <footer>
