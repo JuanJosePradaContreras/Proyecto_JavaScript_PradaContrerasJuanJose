@@ -44,8 +44,8 @@ Fetch API para comunicación cliente-API
 Cómo Ejecutarlo
 
 Clona el repositorio:
-git clone https://github.com/TU-USUARIO/GameCampus-FantasyCreator.git
-cd GameCampus-FantasyCreator
+git clone https://github.com/JuanJosePradaContreras/Proyecto_JavaScript_PradaContrerasJuanJose
+
 
 Abre index.html en tu navegador (puedes usar Live Server si estás en VSCode)
 
