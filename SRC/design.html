@@ -30,48 +30,125 @@
             <h1>Create Your Hero</h1>
         </section>
         <section class="ContainerForm">
-            <form id="characterForm">
-              <div class="form-columns">
-                <div class="column">
-                  <label>Name: <input type="text" name="nombre" required></label><br><br>
-          
-                  <label>Ethnicity:
-                    <select id="raceSelect" name="raza"></select>
+          <form id="characterForm">
+            <div class="form-columns">
+              <div class="column">
+                <label>Name:<br>
+                  <input type="text" name="nombre" required>
+                </label><br><br>
+        
+                <label>Ethnicity:<br>
+                  <select id="raceSelect" name="raza"></select>
+                </label><br><br>
+        
+                <label>Class:<br>
+                  <select id="classSelect" name="clase"></select>
+                </label><br><br>
+        
+                <label>Genre:<br>
+                  <select name="genre">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </label><br><br>
+        
+                <fieldset>
+                  <legend>Equipment</legend>
+                  <label>Weapon:<br>
+                    <input type="text" name="arma" placeholder="Sword, Bow, etc.">
                   </label><br><br>
-          
-                  <label>Class:
-                    <select id="classSelect" name="clase"></select>
+        
+                  <label>Armor:<br>
+                    <input type="text" name="armadura" placeholder="Chainmail, Leather, etc.">
                   </label><br><br>
-          
-                  <label>Genre:
-                    <select name="genre">
-                      <option value="Male">Male</option>
-                      <option value="Female">Female</option>
-                      <option value="Other">Other</option>
-                    </select>
+        
+                  <label>Spells:<br>
+                    <textarea name="hechizos" rows="3" cols="30" placeholder="Fireball, Heal, Invisibility..."></textarea>
+                  </label><br><br>
+        
+                  <label>Accessories:<br>
+                    <input type="text" name="accesorios" placeholder="Ring, Amulet, etc.">
                   </label>
-                </div>
-                <div class="column">
-                  <fieldset>
-                    <legend>Stats</legend>
-                    <label>Strong: <input type="number" name="fuerza" min="1" max="20"></label>
-                    <label>Skill: <input type="number" name="destreza" min="1" max="20"></label>
-                    <label>Physique: <input type="number" name="constitucion" min="1" max="20"></label>
-                    <label>Brightness: <input type="number" name="inteligencia" min="1" max="20"></label>
-                    <label>Wisdom: <input type="number" name="sabiduria" min="1" max="20"></label>
-                    <label>Charisma: <input type="number" name="carisma" min="1" max="20"></label>
-                  </fieldset>
-                </div>
+                </fieldset>
               </div>
-          
-              <br>
-              <button type="submit">Save Hero</button>
-            </form>
-          </section>
+        
+              <div class="column">
+                <fieldset>
+                  <legend>Stats</legend>
+                  <label>Strong:<br><input type="number" name="fuerza" min="1" max="20"></label><br><br>
+                  <label>Skill:<br><input type="number" name="destreza" min="1" max="20"></label><br><br>
+                  <label>Physique:<br><input type="number" name="constitucion" min="1" max="20"></label><br><br>
+                  <label>Brightness:<br><input type="number" name="inteligencia" min="1" max="20"></label><br><br>
+                  <label>Wisdom:<br><input type="number" name="sabiduria" min="1" max="20"></label><br><br>
+                  <label>Charisma:<br><input type="number" name="carisma" min="1" max="20"></label>
+                </fieldset>
+              </div>
+            </div>
+            <br>
+            <button type="submit">Save Hero</button>
+          </form>
+        </section>
     </Main>
     <!----------------------------FOOTER-------------------------------->
     <footer>
         <p>© 2025 Created by Juan Jose Prada</p>
     </footer>
+    <!----------------------------SCRIPT-------------------------------->
+
+    <!--API to put the race and class for the character-->
+  <script>
+    fetch('https://www.dnd5eapi.co/api/races') 
+      .then(response => response.json())
+      .then(data => {
+        const raceSelect = document.getElementById('raceSelect');
+        data.results.forEach(race => {
+          const option = document.createElement('option');
+          option.value = race.index;
+          option.textContent = race.name;
+          raceSelect.appendChild(option);
+        });
+      });
+    fetch('https://www.dnd5eapi.co/api/classes')
+      .then(response => response.json())
+      .then(data => {
+        const classSelect = document.getElementById('classSelect');
+        data.results.forEach(cls => {
+          const option = document.createElement('option');
+          option.value = cls.index;
+          option.textContent = cls.name;
+          classSelect.appendChild(option);
+        });
+      });
+  </script>
+  <!--Database to save Characters-->
+  <script>
+    document.getElementById('characterForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+    
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData.entries());
+    
+      console.log(data);
+    
+      fetch('https://67d2f86a8bca322cc268aaf9.mockapi.io/Characters', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+      .then(res => res.json())
+      .then(personaje => {
+        alert('¡Character saved successfully!');
+        console.log('Guardado:', personaje);
+        this.reset();
+      })
+      .catch(err => {
+        console.error('Error al guardar personaje:', err);
+        alert('No se pudo guardar el personaje.');
+      });
+    });
+  </script>
 </body>
 </html>

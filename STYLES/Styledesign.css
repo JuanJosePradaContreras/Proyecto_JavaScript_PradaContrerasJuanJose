@@ -68,24 +68,23 @@ h1 {
 /* Contenedor del formulario */
 form {
     background-color: #33200F;
-    padding: 30px;
+    padding: 20px;
     border-radius: 12px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
     width: 700px;
     height: 500px;
     color: white;
-    box-sizing: border-box;
-    position: relative;
-    top: 70px;
-    left: 525px;
     font-family: "FunnelSans-Medium";
-    font-size: 16px;
+    font-size: 14px;
+    box-sizing: border-box;
+    margin: 70px auto 0 auto;
+    overflow-y: auto;
   }
   
   /* División en columnas */
   .form-columns {
     display: flex;
-    gap: 32px; /* 2rem */
+    gap: 20px;
   }
   
   /* Cada columna */
@@ -93,7 +92,7 @@ form {
     width: 50%;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
   }
   
   /* Etiquetas */
@@ -101,66 +100,78 @@ form {
     display: flex;
     flex-direction: column;
     font-weight: bold;
-    font-size: 14px;
-    gap: 4px;
+    font-size: 13px;
+    gap: 2px;
   }
   
   /* Inputs y selects */
   input[type="text"],
   input[type="number"],
-  select {
+  select,
+  textarea {
     width: 100%;
-    height: 28px;
-    padding: 4px 8px;
-    border: #efb810;
+    height: 24px;
+    padding: 3px 6px;
+    border: 1px solid #efb810;
     border-radius: 6px;
     background-color: #444;
     color: #fff;
-    font-size: 14px;
+    font-size: 13px;
     box-sizing: border-box;
-  
   }
   
-  /* Fieldset para stats */
+  textarea {
+    resize: none;
+    height: 50px;
+  }
+  
+  /* Fieldset */
   fieldset {
     border: 1px solid #efb810;
-    padding: 16px;
+    padding: 10px;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
   }
   
   /* Título del fieldset */
   legend {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
   }
   
   /* Botón */
   button {
     display: inline-block;
-    width: 200px;
-    height: 50px;
+    width: 180px;
+    height: 40px;
     background: url(../ASSETS/IMG/Buttom.svg) no-repeat center center;
     background-size: cover;
     color: #FFFFFF;
     font-family: "FunnelSans-SemiBold";
     font-size: 14px;
     text-align: center;
-    line-height: 25px;
+    line-height: 40px;
     text-decoration: none; 
     text-shadow: 1px 1px 2px #000000;
     border: none;
     cursor: pointer;
     transition: transform 0.2s ease;
-    position: relative;
-    left: 220px;
-    top: 4px;
+    margin: 10px auto 0 auto;
   }
   
   button:hover {
     transform: scale(1.05);
+  }
+
+  form {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  form::-webkit-scrollbar {
+    display: none;
   }
 /* Footer */
 

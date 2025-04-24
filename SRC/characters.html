@@ -26,11 +26,49 @@
     </header>
     <!-----------------------------MAIN---------------------------------->
     <main>
-        
+
     </main>
     <!----------------------------FOOTER-------------------------------->
     <footer>
         <p>© 2025 Created by Juan Jose Prada</p>
     </footer>
+
+    <!----------------------------SCRIPT-------------------------------->
+<script>
+const apiURL = 'https://67d2f86a8bca322cc268aaf9.mockapi.io/Characters';
+fetch(apiURL)
+  .then(response => response.json())
+  .then(data => {
+    const container = document.getElementById('cards');
+    data.forEach(character => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <h3>${character.nombre}</h3>
+        <p><strong>Race:</strong> ${character.raza}</p>
+        <p><strong>Class:</strong> ${character.clase}</p>
+        <p><strong>Genre:</strong> ${character.genre}</p>
+        <p><strong>Weapon:</strong> ${character.arma}</p>
+        <p><strong>Armor:</strong> ${character.armadura}</p>
+        <p><strong>Spells:</strong> ${character.hechizos}</p>
+        <p><strong>Accessories:</strong> ${character.accesorios}</p>
+        <p><strong>Stats:</strong></p>
+        <ul>
+          <li>Strength: ${character.fuerza}</li>
+          <li>Skill: ${character.destreza}</li>
+          <li>Physique: ${character.constitucion}</li>
+          <li>Brightness: ${character.inteligencia}</li>
+          <li>Wisdom: ${character.sabiduria}</li>
+          <li>Charisma: ${character.carisma}</li>
+        </ul>
+      `;
+      container.appendChild(card);
+    });
+  })
+  .catch(err => {
+    console.error('Error fetching characters:', err);
+    document.getElementById('cards').innerHTML = '<p>Error loading characters.</p>';
+  });
+</script>
 </body>
 </html>
