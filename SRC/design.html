@@ -17,9 +17,9 @@
             </div>
             <nav class="NavOptions">
                 <ul>
-                    <li><a href="/index.html"><H1>Home</H1></a></li> <!----LandingPage where explain the purpose of the website---->
-                    <li><a href="SRC/design.html"><h1>Design</h1></a></li><!----Page to create a new character---->
-                    <li><a href="SRC/characters.html"><h1>Characters</h1></a></li><!----Page to see all the characters created---->
+                    <li><a href="../index.html"><H1>Home</H1></a></li> <!----LandingPage where explain the purpose of the website---->
+                    <li><a href="design.html"><h1>Design</h1></a></li><!----Page to create a new character---->
+                    <li><a href="characters.html"><h1>Characters</h1></a></li><!----Page to see all the characters created---->
                 </ul>
             </nav>
         </section>
@@ -29,10 +29,10 @@
         <section class="Tittle">
             <h1>Create Your Hero</h1>
         </section>
-        <section class="ContainerForm">
+        <section class="ContainerForm"> <!---Form to create the hero its divide in two columns---->
           <form id="characterForm">
             <div class="form-columns">
-              <div class="column">
+              <div class="column"> <!--First column for personal data and equipment-->
                 <label>Name:<br>
                   <input type="text" name="nombre" required>
                 </label><br><br>
@@ -73,7 +73,7 @@
                 </fieldset>
               </div>
         
-              <div class="column">
+              <div class="column"> <!--Second column for apply the stats of the hero-->
                 <fieldset>
                   <legend>Stats</legend>
                   <label>Strong:<br><input type="number" name="fuerza" min="1" max="20"></label><br><br>
